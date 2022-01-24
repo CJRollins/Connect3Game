@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Connect3</string>
+    <string name="yellow">yellow</string>
+    <string name="red">red</string>
+    <string name="yellow_win">Yellow Wins!</string>
+    <string name="red_win">Red Wins!</string>
+    <string name="play_again">Play Again</string>
+    <string name="game_board">A 3 by 3 grid board</string>
+</resources>
