@@ -23,9 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         if (gameState[tappedCounter] == 2 && gameActive){
             gameState[tappedCounter] = activePlayer
-
             counter.translationY = -1500f
-
             activePlayer = if (activePlayer == 0){
                 counter.setImageResource(R.drawable.yellow)
                 1
@@ -33,9 +31,7 @@ class MainActivity : AppCompatActivity() {
                 counter.setImageResource(R.drawable.red)
                 0
             }
-
             counter.animate().translationYBy(1500f).duration = 300
-
             for (winningPosition in winningPositions){
                 if(gameState[winningPosition[0]] == gameState[winningPosition[1]] && gameState[winningPosition[1]] == gameState[winningPosition[2]] && gameState[winningPosition[0]] != 2) {
                     gameActive = false
@@ -49,15 +45,14 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
-
     }
     fun reset(v: View){
         val text: TextView = findViewById(R.id.textInfo)
         val button: Button = findViewById(R.id.button)
         val grid: GridLayout = findViewById(R.id.gridLayout)
+
         button.visibility = View.INVISIBLE
         text.visibility = View.INVISIBLE
-
         grid.forEach {
             val counter: ImageView = it as ImageView
             counter.setImageResource(0)
@@ -65,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         gameState = mutableListOf(2, 2, 2, 2, 2, 2, 2, 2, 2)
         activePlayer = 0
         gameActive = true
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
